@@ -291,7 +291,6 @@ app.post('/logout_admin_user', (req, res) => {
 // FUNCTION TO REMOVE THE ACCESS TOKEN FROM DB
  function  updateAccessTokenRemove(results) {
      let updatesql = "UPDATE admin_login SET access_token =" + JSON.stringify(null) + " WHERE email = "+ JSON.stringify(results[0].email) +"";
-     console.log(updatesql,'updatesql')
      connection.query(updatesql, (error, results) => {
          if(error){
              return (error);
